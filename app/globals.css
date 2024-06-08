@@ -103,10 +103,24 @@ body {
 
 .hero-img{
 
-  border-radius: 25%;
+  border-radius: 50%;
  
 }
 
+.cardorganizer{
+
+  margin-top: 65px;
+}
+
+@media (min-width: 500px){
+
+  .timeend{
+
+    margin-left: 10px;
+  }
+
+
+}
 
 /* ========================================== TAILWIND STYLES */
 @layer utilities {

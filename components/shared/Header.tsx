@@ -22,13 +22,13 @@ const Header = () => {
         </Link>
 
         <SignedIn>
-          <nav className='md:flex-between hidden w-full max-w-xs'> <NavItems /></nav>
+          <nav className='md:flex-between hidden w-full max-w-xs '> <NavItems /></nav>
         </SignedIn>
 
         <div className="flex w-32 justify-end gap-3">
 
           <SignedIn>
-            <UserButton afterSignOutUrl='/' />
+            <UserButton afterSignOutUrl= '/' />
             <MobileNav />
           </SignedIn>
 
