@@ -53,10 +53,13 @@ export const createOrder = async (order: CreateOrderParams) => {
       event: order.eventId,
       buyer: order.buyerId,
     });
+    
+
 
     return JSON.parse(JSON.stringify(newOrder));
   } catch (error) {
     handleError(error);
+  
   }
 }
 
@@ -114,7 +117,7 @@ export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEve
   } catch (error) {
     handleError(error)
   }
-}
+} 
 
 // GET ORDERS BY USER
 export async function getOrdersByUser({ userId, limit = 3, page }: GetOrdersByUserParams) {
@@ -139,7 +142,10 @@ export async function getOrdersByUser({ userId, limit = 3, page }: GetOrdersByUs
         },
       })
 
+
     const ordersCount = await Order.distinct('event._id').countDocuments(conditions)
+
+    // console.log({orders, ordersCount, userId})
 
     return { data: JSON.parse(JSON.stringify(orders)), totalPages: Math.ceil(ordersCount / limit) }
   } catch (error) {
